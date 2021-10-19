@@ -7,6 +7,8 @@ import * as C from "../../components/Components.styles";
 import * as I from "./styles"
 import axios from "axios"; 
 import { useHistory } from "react-router-dom";
+import Swal from "sweetalert2";
+
 
 
 
@@ -22,10 +24,25 @@ function Home() {
             name: input_name.current.value,
             age: input_age.current.value,
         })
+        if(input_name.current.value !=='' || input_age.current.value !=='' ){
+
+            setUsers([...users, new_user]);
+            
+                History.push("/users")
+                Swal.fire(
+                    'Cadastro utilizado com sucesso ✔',           
+                    'success'
+                )
+                  
+        }else{
+            Swal.fire(
+                'Não foi possivel cadastrar 😢',
+                'preencha todos os campos',
+                'error'
+            )
+              
+        }
     
-        setUsers([...users, new_user]);
-    
-        History.push("/users")
     };
     
 
