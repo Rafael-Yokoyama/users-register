@@ -16,7 +16,7 @@ export const Container = styled.div`
 
 export const Image = styled.img`
     width: 250px;
-    margin: 30px auto;
+    margin: 30px auto; 
 `;
 
 export const Input_label = styled.p`
