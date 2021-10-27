@@ -9,18 +9,30 @@ import * as C from "../../components/Components.styles";
 import * as I from "./styles"
 
 import axios from "axios";
+import ParticleEffectButton from "react-particle-effect-button";
 
 function Users() {
 
-    
+
     const [users, setUsers] = useState([]);
     const history = useHistory();
+    const [isbutton, setButton] = useState(true);
+
+
+    useEffect(() => {
+        if (users) {
+            setButton(false);
+        } else {
+            setButton(true);
+        }
+    }, []);
+
 
     useEffect(() => {
         async function fetch_users() {
             const { data: new_users } = await axios.get("http://localhost:3001/users")
-
             setUsers(new_users)
+
         }
         fetch_users()
     }, [users])
@@ -42,24 +54,37 @@ function Users() {
         <I.Container>
 
             <C.ContainerItens is_blur={true}>
-                
+
                 <I.Image alt="Avatar" src={Img2} />
                 <C.H1> Usuários </C.H1>
                 <ul>
                     {users.map(user => (
-                        <I.User key={user.id}>
-                            <p>{user.name}</p>
-                            <p>{user.age}</p>
-                            <button onClick={() => delete_user(user.id)}>
-                                <img alt="bin" src={Bin} />
-                            </button>
-                        </I.User>
+                        <>{
+                            user.name && user.age !== '' ?
+                                <I.User key={user.id}>
+                                    <p>{user.name}</p>
+                                    <p>{user.age}</p>
+
+                                    <button onClick={() => delete_user(user.id)}>
+                                        <img className="bin" alt="bin" src={Bin} />
+                                    </button>
+
+                                </I.User>
+                                : null
+                        }</>
+
+
                     ))
                     }
                 </ul>
-                <C.Button is_back={true} onClick={Push}>
-                    <img alt="Arrow" src={Arrow} /> Voltar
-                </C.Button>
+                <ParticleEffectButton
+                    color='#ffff'
+                    hidden={isbutton}
+                >
+                    <C.Button is_back={true} onClick={Push}>
+                        <img alt="Arrow" src={Arrow} /> Voltar
+                    </C.Button>
+                </ParticleEffectButton>
 
             </C.ContainerItens>
 

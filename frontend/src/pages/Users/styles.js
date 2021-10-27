@@ -11,7 +11,23 @@ export const Container = styled.div`
     height: 100%; 
     min-height: 100vh;
     padding:20px;
+ul{
+    overflow-y:auto;
+    height: 250px;
+    ::-webkit-scrollbar-thumb:vertical {
+        background: #2596be; 
+        height:1px !important;
+        border-radius: 20px;
+        -moz-border-radius: 20px;
+        -webkit-border-radius: 20px;
 
+}
+
+    ::-webkit-scrollbar {
+        width:5px; 
+        background: #FFFFF0; 
+}
+}
     
 `;
 
