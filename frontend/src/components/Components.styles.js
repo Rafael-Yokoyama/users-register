@@ -14,6 +14,7 @@ export const ContainerItens = styled.div`
     background: linear-gradient(157.44deg, rgba(255, 255, 255, 0.6) 0.84%, rgba(255, 255, 255, 0.6) 0.85%, rgba(255, 255, 255, 0.15) 100%);
     border-radius: 61px 61px 0px 0px;
     padding: 20px 15px;
+    margin: 0 20px;
     display: flex;
     flex-direction: column;
     min-height: calc(100vh - 40px);
@@ -26,7 +27,7 @@ export const ContainerItens = styled.div`
 export const Button = styled.button`
     background: ${props => props.is_back ? 'transparent' : 'rgba(0, 0, 0, 0.8)' } ;
     border-radius: 14px;
-    margin: 22px auto;
+    margin: 22px 10px;
     width: 300px;
     height: 54px;
     border: ${props =>props.is_back ? '1px solid #ffffff' : 'none' };
@@ -49,4 +50,5 @@ export const Button = styled.button`
     img{
         transform: ${props => props.is_back && 'rotateY(180deg)'};
     }
+   
 `

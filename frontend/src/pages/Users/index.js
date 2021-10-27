@@ -62,10 +62,11 @@ function Users() {
                         <>{
                             user.name && user.age !== '' ?
                                 <I.User key={user.id}>
+                                  
                                     <p>{user.name}</p>
                                     <p>{user.age}</p>
 
-                                    <button onClick={() => delete_user(user.id)}>
+                                    <button  onClick={() => delete_user(user.id)}>
                                         <img className="bin" alt="bin" src={Bin} />
                                     </button>
 
@@ -81,7 +82,7 @@ function Users() {
                     color='#ffff'
                     hidden={isbutton}
                 >
-                    <C.Button is_back={true} onClick={Push}>
+                    <C.Button className="bom" is_back={true} onClick={Push}>
                         <img alt="Arrow" src={Arrow} /> Voltar
                     </C.Button>
                 </ParticleEffectButton>

@@ -44,5 +44,6 @@ export const Input = styled.input`
     font-size: 24px;
     line-height: 28px;
     color: #FFFFFF;
-    margin-bottom: 34px;
+    margin: 12px 10px;
+   
 `;

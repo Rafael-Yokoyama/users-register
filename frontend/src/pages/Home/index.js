@@ -41,13 +41,25 @@ function Home() {
         if (input_name.current.value !== '' && input_age.current.value !== '') {
 
             setUsers([...users, new_user]);
+       if(input_name.current.value && input_age.current.value)
+          
+            Swal.fire({
+                title: 'Cadastro realizado com sucesso ✔️',
+                icon: 'success',               
+                showCancelButton: true,
+                focusConfirm: false,
+                confirmButtonColor: '#993399',
+                confirmButtonText: 'Continuar',
+                cancelButtonColor: '#418107',
+                cancelButtonText: 'Ver Todos',
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  window.location.reload(false);
+                } else {
+                  History.push('/users');
+                }
+              });
 
-            Swal.fire(
-                'Cadastro realizado com sucesso ✔️',
-                'clique para continuar',
-                'success'
-            )
-            History.push("/users")
 
         } else {
 

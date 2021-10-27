@@ -14,6 +14,7 @@ export const Container = styled.div`
 ul{
     overflow-y:auto;
     height: 250px;
+    padding-bottom:15px;
     ::-webkit-scrollbar-thumb:vertical {
         background: #2596be; 
         height:1px !important;
@@ -38,7 +39,7 @@ export const Image = styled.img`
 
 export const User = styled.li`
     display: flex;
-    justify-content: space-around;
+
     align-items: center;
     background: rgba(255, 255, 255, 0.25);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -47,17 +48,33 @@ export const User = styled.li`
     height: 58px; 
     border: none;
     outline: none;
-    margin-top: 28px;
+    margin: 28px 10px;
+  
     p {
         font-style: normal;
         font-weight: normal;
         font-size: 20px;
         line-height: 28px;
         color: #FFFFFF;
+        padding:30px;
+        display: flex;  
+           
+      
+    }
+    p:nth-child(2){
+        color:rgba(255, 255, 255, 0.75);
+      
+      margin : 0 auto;
+      
     }
     button {
         background: none;
         border: none;
         cursor: pointer;
+        display: flex;
+        justify-content:left;
+        margin-left:auto;
+        padding:20px;
+ 
     }
 `;
